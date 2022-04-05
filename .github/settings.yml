@@ -108,27 +108,27 @@ milestones:
     # The state of the milestone. Either `open` or `closed`
     state: open
 
-collaborators:
-# Collaborators: give specific users access to any repository.
-# See https://docs.github.com/en/rest/reference/collaborators#add-a-repository-collaborator for available options
-- username: regpaco
-  permission: push
-# The permission to grant the collaborator. Can be one of:
-# * `pull` - can pull, but not push to or administer this repository.
-# * `push` - can pull and push, but not administer this repository.
-# * `admin` - can pull, push and administer this repository.
-- username: beetlejuice
-  permission: pull
-# You can exclude a list of repos for this collaborator and all repos except these repos would have this collaborator
-  exclude:
-  - actions-demo
+# collaborators:
+# # Collaborators: give specific users access to any repository.
+# # See https://docs.github.com/en/rest/reference/collaborators#add-a-repository-collaborator for available options
+# - username: regpaco
+#   permission: push
+# # The permission to grant the collaborator. Can be one of:
+# # * `pull` - can pull, but not push to or administer this repository.
+# # * `push` - can pull and push, but not administer this repository.
+# # * `admin` - can pull, push and administer this repository.
+# - username: beetlejuice
+#   permission: pull
+# # You can exclude a list of repos for this collaborator and all repos except these repos would have this collaborator
+#   exclude:
+#   - actions-demo
 
-- username: thor
-  permission: push
-# You can include a list of repos for this collaborator and only those repos would have this collaborator
-  include:
-  - actions-demo
-  - another-repo
+# - username: thor
+#   permission: push
+# # You can include a list of repos for this collaborator and only those repos would have this collaborator
+#   include:
+#   - actions-demo
+#   - another-repo
 
 # See https://docs.github.com/en/rest/reference/teams#create-a-team for available options
 teams:
@@ -138,7 +138,7 @@ teams:
     # * `push` - can pull and push, but not administer this repository.
     # * `admin` - can pull, push and administer this repository.
     permission: admin
-  - name: docss
+  - name: docs
     permission: push
   - name: docs
     permission: pull
@@ -190,26 +190,26 @@ restrictedRepos:
   exclude: ['admin', '.github', 'safe-settings']
   # Alternatively you can only include certain repos
   # include: ['test']
-configvalidators:
-  - plugin: collaborators
-    error: |
-      `Admin cannot be assigned to collaborators`
-    script: |
-      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
-      return baseconfig.permission != 'admin'
-overridevalidators:
-  - plugin: branches
-    error: |
-      `Branch protection required_approving_review_count cannot be overidden to a lower value`
-    script: |
-      console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
-      console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`)
-      if (baseconfig.protection.required_pull_request_reviews.required_approving_review_count && overrideconfig.protection.required_pull_request_reviews.required_approving_review_count ) {
-        return overrideconfig.protection.required_pull_request_reviews.required_approving_review_count >= baseconfig.protection.required_pull_request_reviews.required_approving_review_count
-      }
-      return true
-  - plugin: labels
-    error: |
-      Some error
-    script: |
-      return true
+# configvalidators:
+#   - plugin: collaborators
+#     error: |
+#       `Admin cannot be assigned to collaborators`
+#     script: |
+#       console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
+#       return baseconfig.permission != 'admin'
+# overridevalidators:
+#   - plugin: branches
+#     error: |
+#       `Branch protection required_approving_review_count cannot be overidden to a lower value`
+#     script: |
+#       console.log(`baseConfig ${JSON.stringify(baseconfig)}`)
+#       console.log(`overrideConfig ${JSON.stringify(overrideconfig)}`)
+#       if (baseconfig.protection.required_pull_request_reviews.required_approving_review_count && overrideconfig.protection.required_pull_request_reviews.required_approving_review_count ) {
+#         return overrideconfig.protection.required_pull_request_reviews.required_approving_review_count >= baseconfig.protection.required_pull_request_reviews.required_approving_review_count
+#       }
+#       return true
+#   - plugin: labels
+#     error: |
+#       Some error
+#     script: |
+#       return true
