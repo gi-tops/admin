@@ -4,3 +4,27 @@ repository:
   homepage: https://github.com/gi-tops/safe-settings
   auto_init: true
   license_template: mit
+  topics:
+    - github
+    - safe-settings
+    - bot_created
+  private: false
+  visibility: public
+  has_issues: true
+  has_projects: true
+  has_wiki: true
+  default_branch: main
+  allow_squash_merge: true
+  allow_merge_commit: true
+  allow_rebase_merge: true
+  allow_auto_merge: false
+  delete_branch_on_merge: true
+
+branches:
+  - name: default
+    protection:
+      required_pull_request_reviews:
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+      enforce_admins: true
