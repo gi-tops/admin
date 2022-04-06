@@ -7,7 +7,7 @@ repository:
   topics:
     - github
     - safe-settings
-    - bot_created
+    - bot-created
   private: false
   visibility: public
   has_issues: true
