@@ -47,7 +47,7 @@ branches:
       restrictions:
         apps: []
         users: []
-        teams: [core]
+        teams: [gitops\core]
 
 validator:
   pattern: '[a-zA-Z0-9_-]+'
