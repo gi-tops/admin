@@ -1,5 +1,5 @@
 repository:
-  name: bot_created
+  name: bot-created
   force_create: true
   homepage: https://github.com/gi-tops/safe-settings
   auto_init: true
