@@ -34,20 +34,10 @@ branches:
   - name: default
     protection:
       required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: true
-        dismissal_restrictions:
-          users: []
-          teams: [core]
-      # required_status_checks:
-      #   strict: true
-      #   contexts: []
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
       enforce_admins: true
-      restrictions:
-        apps: []
-        users: []
-        teams: [gitops\core]
 
 validator:
   pattern: '[a-zA-Z0-9_-]+'
