@@ -1,4 +1,6 @@
 repository:
+  name: bot-test
+  force_create: true
   description: Repo located in the Gi-Tops Organization
   homepage: https://github.com/gi-tops/safe-settings
   auto_init: true
