@@ -47,7 +47,7 @@ branches:
       restrictions:
         apps: []
         users: []
-        teams: ['core', 'docs', 'globalteam']
+        teams: [core, docs, globalteam]
 
 validator:
   pattern: '[a-zA-Z0-9_-]+'
