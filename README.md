@@ -91,7 +91,7 @@ The recommendation is to split the out configuration into Repo, Suborg, and Org-
 CODEOWNERS file will allow you to authorize individual people, teams, and business units to control
 specific settings for their repos. To ensure teams maintain a baseline security configuration, you
 can add additional validations at the org level to override any controls that don't meet the
-minimum protections for the organization. _Additional information here_ - [Config Validation](#config-validation)
+minimum protections for the organization.
 
 _Note:_  The precedence order is `.github/repos/*.yml > .github/suborgs/*.yml > .github/settings.yml`
 
@@ -151,12 +151,12 @@ This section will be filled in later to talk about how we can configure a specif
 Create a new GitHub App with:
 
 - __Homepage URL:__ the URL to the GitHub repository for your app
-- __Webhook URL:__ Use https://example.com/ for now, until we launch our heroku app
+- __Webhook URL:__ Use [https://example.com/](https://example.com/) for now, until we launch our heroku app
 - __Webhook Secret:__ Generate a unique secret with `openssl rand -base64 32` and save it because you'll need it in a minute to configure your deployed app.
 
 #### Permissions & events
 
-1. Set the correct **Permissions & events** for the GitHub Integration:
+1. Set the correct __Permissions & events__ for the GitHub Integration:
 
 ##### Permissions
 
@@ -185,7 +185,7 @@ Create a new GitHub App with:
 
 1. Download the private key from the app.
 
-1. Make sure that you click the green **Install** button on the top left of the app page. This gives you an option of installing the app on all or a subset of your repositories. __**Important: Install this App for `All` repos in the Org**__
+1. Make sure that you click the green __Install__ button on the top left of the app page. This gives you an option of installing the app on all or a subset of your repositories. __Important: Install this App for `All` repos in the Org__
 
 ### Heroku Deployment
 
@@ -204,7 +204,8 @@ After [creating the GitHub App](#create-github-app)
    Git remote heroku added
    ```
 
-1. Go back to your [app settings page](https://github.com/settings/apps) and update the **Webhook URL** to the URL of your deployment, e.g. `http://rocky-plains-38240.herokuapp.com/`.
+1. Go back to your app settings page ( [Gi-Tops Safe Settings
+Enforcer](https://github.com/apps/gi-tops-safe-settings-enforcer) ) and update the __Webhook URL__ to the URL of your deployment, e.g. `http://rocky-plains-38240.herokuapp.com/`.
 
 1. Configure the Heroku app, replacing the `APP_ID` and `WEBHOOK_SECRET` with the values for those variables, and setting the path for the `PRIVATE_KEY`:
 
@@ -248,3 +249,5 @@ protections rules and see if it's working as expected.
 - Add test for the additional functionality added in.
 - Detail the flow of the requests.
 - Break away from using as much direct language from the safe-settings repo.
+- Talk about validating configs ensuring they meet the security baseline.
+- Add examples for repos and suborgs.
