@@ -48,7 +48,7 @@ branches:
         teams: []
 
 validator:
-  pattern: '[a-zA-Z]'
+  pattern: '[a-z]{1-3}$'
 
 restrictedRepos:
   exclude: ['admin', '.github', 'safe-settings']
