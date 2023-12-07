@@ -15,7 +15,8 @@ jobs:
             console.log("Starting the script...");
             console.log("Hello, this is a message from the GitHub Script Workflow!");
             console.log("Ending the script.");
-            return 1
+            core.warn("boo");
+            return 1;
   error-message:
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +24,14 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            console.setFailed("exits and errors");
-            console.warn("boo");
-            console.error("crap");
-            console.log("Ending the script.");
+            core.error("crap");
+            return 1;
+  fail-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Errors a message
+        uses: actions/github-script@v7
+        with:
+          script: |
+            core.setFailed("this should fail correctly?");
+            core.log("Ending the script.");
