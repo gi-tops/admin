@@ -1,0 +1,24 @@
+name: GitHub Script Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a message
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log("Starting the script...");
+            console.log("Hello, this is a message from the GitHub Script Workflow!");
+            console.log("Ending the script.");
+      - name: Errors a message
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.warn("boo");
+            console.error("crap");
+            console.log("Ending the script.");
