@@ -251,3 +251,7 @@ protections rules and see if it's working as expected.
 - Break away from using as much direct language from the safe-settings repo.
 - Talk about validating configs ensuring they meet the security baseline.
 - Add examples for repos and suborgs.
+
+### Adding category
+
+just adding some detail not much else.
